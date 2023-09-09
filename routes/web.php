@@ -25,3 +25,9 @@ Route::get('/',  [EstudianteController::class, 'index'])->name('index');
 Route::get('/formEstudiante', [EstudianteController::class, 'createEstudiante'])->name('createEstudiante');
 //Guardar
 Route::post('/saveEstudiante', [EstudianteController::class, 'saveEstudiante'])->name('estudiante.saveEstudiante');
+//Editar
+Route::get('/edit/{carnet}',  [EstudianteController::class, 'editStuden'])->name('editStuden');
+//Guardar edicion
+Route::patch('/post/{carnet}',[EstudianteController::class, 'updateStuden'])->name('updateStuden');
+//Eliminar
+Route::delete('/delate/{carnet}', [EstudianteController::class,'deleteStuden'])->name('deleteStuden');

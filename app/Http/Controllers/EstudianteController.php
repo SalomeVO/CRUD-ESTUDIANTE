@@ -42,13 +42,24 @@ class EstudianteController extends Controller
         return redirect('/')->with('Guardado', "Estudiante Registrado");
     }
 
-    public function update(Request $request, estudiante $estudiante)
+    public function editStuden($carnet)
     {
-        //
+        $estudiante = estudiante::findOrFail($carnet);
+
+        return view('Estudiante.updateEstudiante', compact('estudiante'));
     }
 
-    public function destroy(estudiante $estudiante)
+    public function updateStuden(Request $request, $carnet)
     {
-        //
+        $estudiante = request()->except((['_token', '_method']));
+        estudiante::where('carnet', '=', $carnet)->update($estudiante);
+
+        return redirect('/')->with('Editado', "Estudiante Editado");
+    }
+
+    public function deleteStuden($carnet)
+    {
+        estudiante::destroy($carnet);
+        return redirect('/')->with('Eliminado', "Estudiante Eliminado");
     }
 }
