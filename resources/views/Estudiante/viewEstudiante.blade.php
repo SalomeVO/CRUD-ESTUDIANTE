@@ -9,7 +9,7 @@
                 <br>
                 <!--Mensaje de Eliminado-->
                 @if(session('Eliminado'))
-                    <div class="alert alert-danger text-dark" style="background-color: #F1D914 ;">
+                    <div class="alert alert-danger text-dark">
                         {{session('Eliminado')}}
                     </div>
                 @endif
@@ -59,6 +59,13 @@
                                     <a href="{{route('editStuden', $studes->carnet)}}" class="btn btn-outline-info mb-2 me-2 m-1" style="border-radius: 50%">
                                         <i class="fas fa-pencil-alt"></i>
                                     </a>
+                                    <form action="{{route('deleteStuden',$studes->carnet)}}" method="POST">
+                                        @csrf @method('DELETE')
+
+                                        <button type="submit" onclick="return confirm('¿Segurro de borrar?')" class="btn btn-outline-danger mb-2 mr-2 m-1">
+                                            <i class="far fa-trash-alt"></i>
+                                        </button>
+                                    </form>
 
                                 </div>
                             </td>

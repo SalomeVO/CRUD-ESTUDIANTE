@@ -56,8 +56,9 @@ class EstudianteController extends Controller
         return redirect('/')->with('Editado', "Estudiante Editado");
     }
 
-    public function destroy(estudiante $estudiante)
+    public function deleteStuden($carnet)
     {
-        //
+        estudiante::destroy($carnet);
+        return redirect('/')->with('Eliminado', "Estudiante Eliminado");
     }
 }

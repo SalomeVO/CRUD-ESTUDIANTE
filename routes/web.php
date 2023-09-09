@@ -29,3 +29,5 @@ Route::post('/saveEstudiante', [EstudianteController::class, 'saveEstudiante'])-
 Route::get('/edit/{carnet}',  [EstudianteController::class, 'editStuden'])->name('editStuden');
 //Guardar edicion
 Route::patch('/post/{carnet}',[EstudianteController::class, 'updateStuden'])->name('updateStuden');
+//Eliminar
+Route::delete('/delate/{carnet}', [EstudianteController::class,'deleteStuden'])->name('deleteStuden');
