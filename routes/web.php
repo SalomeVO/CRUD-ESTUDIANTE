@@ -15,8 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-//Vista
+
 Route::get('/', function () { return view('Estudiante/viewEstudiante'); });
+
+//Vista
+Route::get('/',  [EstudianteController::class, 'index'])->name('index');
+
 //Formulario
 Route::get('/formEstudiante', [EstudianteController::class, 'createEstudiante'])->name('createEstudiante');
 //Guardar

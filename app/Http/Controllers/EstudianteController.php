@@ -4,19 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Models\estudiante;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class EstudianteController extends Controller
 {
 
     public function index()
     {
-        //
+        $estudiante= estudiante::all();//el numero de filas
+
+        return view('Estudiante.viewEstudiante', compact("estudiante"));
     }
 
     public function createEstudiante()
     {
-        $estudiante = estudiante::paginate(10);//el numero de filas
-        return view('Estudiante.createEstudiante', compact('estudiante'));
+        return view('Estudiante.createEstudiante');
     }
 
     public function saveEstudiante(Request $request)
