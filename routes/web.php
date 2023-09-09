@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EstudianteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('Estudiante/viewEstudiante');
-});
+
+//Vista
+Route::get('/', function () { return view('Estudiante/viewEstudiante'); });
+//Formulario
+Route::get('/formEstudiante', [EstudianteController::class, 'createEstudiante'])->name('createEstudiante');
+//Guardar
+Route::post('/saveEstudiante', [EstudianteController::class, 'saveEstudiante'])->name('estudiante.saveEstudiante');
