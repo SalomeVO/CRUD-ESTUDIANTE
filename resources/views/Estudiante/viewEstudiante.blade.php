@@ -54,7 +54,14 @@
                             <td>{{$studes->apellido}}</td>
                             <td>{{$studes->carrrera}}</td>
                             <td>{{$studes->semestre}}</td>
-                            <td></td>
+                            <td>
+                                <div class="btn btn-group">
+                                    <a href="{{route('editStuden', $studes->carnet)}}" class="btn btn-outline-info mb-2 me-2 m-1" style="border-radius: 50%">
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </a>
+
+                                </div>
+                            </td>
                         </tr>
                     @endforeach
                     </tbody>
