@@ -55,12 +55,12 @@
                                         <a class="btn btn-outline-danger btn-xs col-md-12" href="{{ url('/') }}">
                                             <i class="fas fa-times-circle"></i> Cancelar
                                         </a>
-                                    </div>
-                                </div>
-                                <br>
                             </div>
                         </div>
-                    </form>
+                        <br>
+                    </div>
                 </div>
-            </div>
+            </form>
+        </div>
+    </div>
 @endsection
