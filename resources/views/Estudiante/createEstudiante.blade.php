@@ -48,6 +48,10 @@
                                 <input type="text" name="semestre" class="form-control"
                                        value="{{old('semestre')}}" placeholder="Semestre">
                             </div>
+                            <!--este solo se mostrara en la api-->
+                            <div class="col-lg">
+                                <input type="hidden" name="control" value="form">
+                            </div>
                             <br>
                             <div class="row">
                                 <div class="row form-group">
