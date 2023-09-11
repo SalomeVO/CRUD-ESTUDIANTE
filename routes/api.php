@@ -25,5 +25,5 @@ Route::get("get_studen",[EstudianteController::class,"getAll"])->name("api-getAl
 Route::put("saveEstudiante",[EstudianteController::class,"saveEstudiante"])->name("api-saveEstudiante");
 //API-Guardar
 Route::post('/editApi/{carnet}', [EstudianteController::class, 'editStudenApi'])->name('api-editStuden');
-//API-para eliminar estudiante
+//API-Para eliminar estudiante
 Route::delete('/delateApi/{carnet}', [EstudianteController::class,'destroyStuden'])->name('api-destroyStuden');
