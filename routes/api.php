@@ -21,5 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 //API-lista
 Route::get("get_studen",[EstudianteController::class,"getAll"])->name("api-getAll");
-//API-guardar utilizamos la funcion que ya teniamos
+//API-guardar utilizamos la funcion que ya teniamos de guardar
 Route::put("saveEstudiante",[EstudianteController::class,"saveEstudiante"])->name("api-saveEstudiante");
