@@ -90,6 +90,7 @@ class EstudianteController extends Controller
         ]);
     }
 
+    //api-para editar los estudiantes
     public function editStudenApi($carnet, Request $request)
     {
         estudiante::find($carnet)->fill($request->all())->save();
