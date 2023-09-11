@@ -81,5 +81,23 @@ class EstudianteController extends Controller
         return $studen;
     }
 
+    //api-para eliminar estudiante
+    public function destroyStuden($carnet)
+    {
+        estudiante::destroy($carnet);
+        return response()->json([
+            'Eliminado exitosamente',
+        ]);
+    }
+
+    //api-para editar los estudiantes
+    public function editStudenApi($carnet, Request $request)
+    {
+        estudiante::find($carnet)->fill($request->all())->save();
+
+        return response()->json([
+            'Editado exitosamente',
+        ]);
+    }
 
 }
