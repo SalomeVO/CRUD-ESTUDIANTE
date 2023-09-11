@@ -23,3 +23,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get("get_studen",[EstudianteController::class,"getAll"])->name("api-getAll");
 //API-guardar utilizamos la funcion que ya teniamos
 Route::put("saveEstudiante",[EstudianteController::class,"saveEstudiante"])->name("api-saveEstudiante");
+
+Route::delete('/delateApi/{carnet}', [EstudianteController::class,'destroyStuden'])->name('api-destroyStuden');
